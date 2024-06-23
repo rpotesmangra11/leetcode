@@ -15,6 +15,6 @@
 let num_of_digits = (x) => {
     let count = 0
   for (let i = 0; x > 0; i++) {
-    
+    //Hash Map
   }
 };
