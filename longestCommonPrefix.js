@@ -27,10 +27,13 @@
  * @return {string}
  */
 var longestCommonPrefix = function (strs) {
+  // If there is no common prefix, return an empty string "".
   if (strs.length === 0) return "";
 
+  //Hold the entire first string in array as prefix
   let prefix = strs[0];
 
+  //loop through array of strings, from the second string, first string in prefix variable
   for (let i = 1; i < strs.length; i++) {
     while (strs[i].indexOf(prefix) !== 0) {
       prefix = prefix.substring(0, prefix.length - 1);
