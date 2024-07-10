@@ -46,37 +46,41 @@ console.log(twoSum([2, 7, 11, 15], 9));
 
 //My second solution
 var twoSum = function (nums, target) {
-    let arr = []
-    for (let i = 0; i < nums.length; i++) {
-        let addend1 = nums[i]
-        let addend2 = target - addend1
-        if (nums.lastIndexOf(addend2) != -1 && nums.lastIndexOf(addend2) != nums.indexOf(addend1)) {
-            addend1 = nums.indexOf(addend1)
-            addend2 = nums.lastIndexOf(addend2)
-            return [...arr, addend1, addend2]
-        }
-
+  let arr = [];
+  for (let i = 0; i < nums.length; i++) {
+    let addend1 = nums[i];
+    let addend2 = target - addend1;
+    if (
+      nums.lastIndexOf(addend2) != -1 &&
+      nums.lastIndexOf(addend2) != nums.indexOf(addend1)
+    ) {
+      addend1 = nums.indexOf(addend1);
+      addend2 = nums.lastIndexOf(addend2);
+      return [...arr, addend1, addend2];
     }
-}
+  }
+};
 
 //The best solution, need to learn hash maps
 var twoSum = function (nums, target) {
-    const mp = {}
- 
-    for (let i = 0; i < nums.length; i++) {
-        const diff = target - nums[i]
-        console.log(`Iteration ${i}: Current number is ${nums[i]}, difference is ${diff}`);
-    
-        if (diff in mp) {
-            console.log(`Found ${diff} in map, returning [${i}, ${mp[diff]}]`);
-            return [i, mp[diff]]
-        }
- 
-        mp[nums[i]] = i
-        console.log(`Adding ${nums[i]} to map with value ${i}`);
-        console.log('Current map:', mp);
+  const mp = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i];
+    console.log(
+      `Iteration ${i}: Current number is ${nums[i]}, difference is ${diff}`
+    );
+
+    if (diff in mp) {
+      console.log(`Found ${diff} in map, returning [${i}, ${mp[diff]}]`);
+      return [i, mp[diff]];
     }
-}
+
+    mp[nums[i]] = i;
+    console.log(`Adding ${nums[i]} to map with value ${i}`);
+    console.log("Current map:", mp);
+  }
+};
 
 // Call the function with some test inputs
-twoSum([2, 7, 11, 15], 9);
+twoSum([2, 7, 11, 15, 16], 9);

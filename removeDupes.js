@@ -10,5 +10,5 @@ var removeDuplicates = (nums) => {
   return nums.length
 };
 
-console.log(removeDuplicates([1,1,2]))
+console.log(removeDuplicates([1,1,2,2]))
 // removeDuplicates([1, 1, 2]);
