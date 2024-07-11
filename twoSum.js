@@ -83,4 +83,4 @@ var twoSum = function (nums, target) {
 };
 
 // Call the function with some test inputs
-twoSum([2, 7, 11, 15, 16], 9);
+twoSum([2, 7, 11, 15, 16, 17], 9);
